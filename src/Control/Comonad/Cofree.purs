@@ -166,8 +166,8 @@ instance extendCofree :: Functor f => Extend (Cofree f) where
 instance comonadCofree :: Functor f => Comonad (Cofree f) where
   extract = head
 
-instance applyCofree :: Alternative f => Apply (Cofree f) where
-  apply = ap
+instance applyCofree :: Apply f => Apply (Cofree f) where
+  apply = apply
 
 instance applicativeCofree :: Alternative f => Applicative (Cofree f) where
   pure a = mkCofree a empty
